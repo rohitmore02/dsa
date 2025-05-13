@@ -24,7 +24,86 @@ class Patterns {
     void pattern3(int n) {
         for (int i=1; i<=n; i++) {
             for (int j=1; j<=i; j++) {
-                System.out.print(j);
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    void pattern4(int n) {
+        for (int i=1; i<=n; i++) {
+            for (int j=1; j<=i; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    void pattern5(int n) {
+        for (int i=0; i<n; i++) {
+            for (int j=0; j<n-i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    void pattern6(int n) {
+        for (int i=0; i<n; i++) {
+            for (int j=0; j<n-i; j++) {
+                System.out.print((j+1) + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    void pattern7(int n) {
+        for (int i=1; i<=n; i++) {
+            for (int j=0; j<n-i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j=0; j<i*2-1; j++) {
+                System.out.print("*");
+            }
+
+            for (int j=0; j<n-i; j++) {
+                System.out.print(" ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    void pattern8(int n) {
+        for (int i=1; i<=n; i++) {
+            for (int j=1; j<i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j=1; j<=2*(n-i)+1; j++) {
+                System.out.print("*");
+            }
+
+            for (int j=1; j<i; j++) {
+                System.out.print(" ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    void pattern9(int n) {
+        pattern7(n);
+        pattern8(n);
+    }
+
+    void pattern10(int n) {
+        for (int i=1; i<=(2*n-1); i++) {
+            int stars = i;
+            if (i > n) stars = 2*n - i;
+            for (int j=1; j<=stars; j++) {
+                System.out.print("*");
             }
             System.out.println();
         }
@@ -35,7 +114,7 @@ class Patterns {
 
         Scanner myObj = new Scanner(System.in);
         int num = myObj.nextInt();
-        obj.pattern3(num);
+        obj.pattern10(num);
     }
 
 }
