@@ -109,12 +109,62 @@ class Patterns {
         }
     }
 
+    void pattern11(int n) {
+        for (int i=1; i<=n; i++) {
+            int number = 1;
+
+            if (i%2==0) number = 0;
+
+            for (int j=1; j<=i; j++) {
+                System.out.print(number + " ");
+                number = 1 - number;
+            }
+
+            System.out.println();
+        }
+    }
+
+    void pattern12(int n) {
+        for (int i=1; i<=n; i++) {
+            for (int j=1; j<=n; j++) {
+                if (j<=i) System.out.print(j);
+                else System.out.print(" ");
+            }
+
+            for (int j=n; j>=1; j--) {
+                if (j<=i) System.out.print(j);
+                else System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    void pattern13(int n) {
+        int number = 1;
+        for (int i=1; i<=n; i++) {
+            for (int j=1; j<=i; j++) {
+                System.out.print(number + " ");
+                number++;
+            }
+            System.out.println();
+        }
+    }
+
+    void pattern14(int n) {
+        for (int i=0; i<n; i++) {
+            for (char ch='A'; ch<='A'+i; ch++) {
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String args[]) {
         Patterns obj = new Patterns();
 
         Scanner myObj = new Scanner(System.in);
         int num = myObj.nextInt();
-        obj.pattern10(num);
+        obj.pattern14(num);
     }
 
 }
