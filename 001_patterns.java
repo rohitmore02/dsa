@@ -159,12 +159,66 @@ class Patterns {
         }
     }
 
+    void pattern15(int n) {
+        for (int i=n; i>0; i--) {
+            for (char ch='A'; ch<'A'+i; ch++) {
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    void pattern16(int n) {
+        char ch = 'A';
+        for (int i=0; i<n; i++) {
+            for (int j=0; j<=i; j++) {
+                System.out.print(ch + " ");
+            }
+            ch++;
+            System.out.println();
+        }
+    }
+
+    void pattern17(int n) {
+        for (int i=0; i<n; i++) {
+            for (int j=0; j<=n-i-1; j++) {
+                System.out.print(" ");
+            }
+
+            char ch = 'A';
+            int breakPoint = (2*i + 1) / 2;
+            for (int j=1; j<=2*i+1; j++) {
+                System.out.print(ch);
+                if (j <= breakPoint) ch++;
+                else ch--;
+            }
+            
+            for (int j=0; j<=n-i-1; j++) {
+                System.out.print(" ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    void pattern18(int n) {
+        for (int i=0; i<n; i++) {
+            char ch = (char) ('A' + (n - i -1));
+            for (int j=0; j<=i; j++) {
+                System.out.print(ch);
+                ch++;
+            }
+
+            System.out.println();
+        }
+    }
+
     public static void main(String args[]) {
         Patterns obj = new Patterns();
 
         Scanner myObj = new Scanner(System.in);
         int num = myObj.nextInt();
-        obj.pattern14(num);
+        obj.pattern18(num);
     }
 
 }
