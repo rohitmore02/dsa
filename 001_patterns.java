@@ -213,12 +213,54 @@ class Patterns {
         }
     }
 
+    void pattern19(int n) {
+        int star;
+        for (int i=0; i<n*2; i++) {
+            if (i<n) star = n-i;
+            else star = i-n+1;
+            for (int j=0; j<star; j++) {
+                System.out.print("*");
+            }
+
+            for (int j=0; j<(n-star)*2; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j=0; j<star; j++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+
+    void pattern20(int n) {
+        for (int i=1; i<=2*n-1; i++) {
+            int star = i;
+            if (i>n) star = 2*n-i;
+
+            for (int j=0; j<star; j++) {
+                System.out.print("*");
+            }
+
+            for (int j=0; j<(n-star)*2; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j=0; j<star; j++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+
     public static void main(String args[]) {
         Patterns obj = new Patterns();
 
         Scanner myObj = new Scanner(System.in);
         int num = myObj.nextInt();
-        obj.pattern18(num);
+        obj.pattern20(num);
     }
 
 }
