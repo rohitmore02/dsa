@@ -1,4 +1,5 @@
 
+import static java.lang.Integer.min;
 import java.util.Scanner;
 
 class Patterns {
@@ -255,12 +256,37 @@ class Patterns {
         }
     }
 
+    void pattern21(int n) {
+        for (int i=1; i<=n; i++) {
+
+            for (int j=1; j<=n; j++) {
+                if ( i==1 || i==n || j==1 || j==n) System.out.print("*");
+                else System.out.print(" ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    void pattern22(int n) {
+        for (int i=0; i<2*n-1;i++) {
+            for (int j=0; j<2*n-1; j++) {
+                int top = i;
+                int left = j;
+                int right = (2*n-2) - j;
+                int down = (2*n-2) - i;
+                System.out.print(n - (min(min(top, down), min(left, right))));
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String args[]) {
         Patterns obj = new Patterns();
 
         Scanner myObj = new Scanner(System.in);
         int num = myObj.nextInt();
-        obj.pattern20(num);
+        obj.pattern22(num);
     }
 
 }
